@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+mybatis:
+  mapper-locations: classpath:*xml
+  type-aliases-package: cn.nero.ds.domain
+
+spring:
+  datasource:
+    dynamic:
+      primary: user
+      strict: false
+      datasource:
+        user:
+          url: ${datasource[0].url}
+          username: ${datasource[0].username}
+          password: ${datasource[0].password}
+        balance:
+          url: ${datasource[1].url}
+          username: ${datasource[1].username}
+          password: "${datasource[1].password}"
