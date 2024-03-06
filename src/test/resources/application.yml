@@ -14,10 +14,10 @@ spring:
       strict: false
       datasource:
         user:
-          url: jdbc:mysql://localhost:3306/user?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
-          username: root
-          password: 2018023931
+          url: ${datasource[0].url}
+          username: ${datasource[0].username}
+          password: ${datasource[0].password}
         balance:
-          url: jdbc:mysql://rm-2ze4w314o6rc8sxy8do.mysql.rds.aliyuncs.com/balance?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
-          username: dev
-          password: "!eGzZcsh8NhDFY+q"
+          url: ${datasource[1].url}
+          username: ${datasource[1].username}
+          password: "${datasource[1].password}"
